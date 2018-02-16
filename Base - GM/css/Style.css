@@ -1,0 +1,31 @@
+﻿body {
+}
+.reporte{
+margin:0px 0% 0px 0%;
+background:#ffffff;
+width:100%;
+height:100%;
+}
+
+.bt {
+height:24px;
+        width:30px;
+        border-left-width: 0px;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+}
+
+canvas{
+    cursor: crosshair;
+    background:rgba(255, 255, 255, 0.00);
+ }
+#clr div{
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    float:left;
+}

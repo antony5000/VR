@@ -1,0 +1,16 @@
+﻿body {
+}
+
+@font-face {
+    font-family: 'BebasNeueM';
+    src: url('../fonts/BebasNeue.otf') format('opentype');
+}
+@font-face {
+    font-family: 'TradeGothicLTStd-Bd2';
+    src: url('../fonts/TradeGothicLTStd-Bd2.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ERASBD';
+    src: url('../fonts/ERASBD.TTF') format('truetype');
+}

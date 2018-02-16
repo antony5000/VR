@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RVprofile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="20" />
+          <Property Name="menu1" Type="nchar" MaxLength="10" />
+          <Property Name="menu2" Type="nchar" MaxLength="10" />
+          <Property Name="menu3" Type="nchar" MaxLength="10" />
+          <Property Name="menu4" Type="nchar" MaxLength="10" />
+          <Property Name="menu5" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="RVsub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="sub1" Type="bit" />
+          <Property Name="sub2" Type="bit" />
+          <Property Name="sub3" Type="bit" />
+          <Property Name="sub4" Type="bit" />
+          <Property Name="sub5" Type="bit" />
+        </EntityType>
+        <EntityType Name="RVuser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user" Type="nchar" MaxLength="10" />
+          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="surname" Type="nchar" MaxLength="10" />
+          <Property Name="password" Type="nchar" MaxLength="10" />
+          <Property Name="status" Type="bit" />
+          <Property Name="idProfile" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_RVprofile_RVsub">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub1">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub2">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub3">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub4">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVuser_RVprofile">
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="0..1" />
+          <End Role="RVuser" Type="Self.RVuser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVprofile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVuser">
+              <PropertyRef Name="idProfile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RVModelStoreContainer">
+          <EntitySet Name="RVprofile" EntityType="Self.RVprofile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RVsub" EntityType="Self.RVsub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RVuser" EntityType="Self.RVuser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_RVprofile_RVsub" Association="Self.FK_RVprofile_RVsub">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub1" Association="Self.FK_RVprofile_RVsub1">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub2" Association="Self.FK_RVprofile_RVsub2">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub3" Association="Self.FK_RVprofile_RVsub3">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub4" Association="Self.FK_RVprofile_RVsub4">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVuser_RVprofile" Association="Self.FK_RVuser_RVprofile">
+            <End Role="RVprofile" EntitySet="RVprofile" />
+            <End Role="RVuser" EntitySet="RVuser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RVprofile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="menu1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="menu2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="menu3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="menu4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="menu5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="RVsub" Relationship="Self.FK_RVprofile_RVsub" FromRole="RVprofile" ToRole="RVsub" />
+          <NavigationProperty Name="RVsub1" Relationship="Self.FK_RVprofile_RVsub1" FromRole="RVprofile" ToRole="RVsub" />
+          <NavigationProperty Name="RVsub2" Relationship="Self.FK_RVprofile_RVsub2" FromRole="RVprofile" ToRole="RVsub" />
+          <NavigationProperty Name="RVsub3" Relationship="Self.FK_RVprofile_RVsub3" FromRole="RVprofile" ToRole="RVsub" />
+          <NavigationProperty Name="RVsub4" Relationship="Self.FK_RVprofile_RVsub4" FromRole="RVprofile" ToRole="RVsub" />
+          <NavigationProperty Name="RVuser" Relationship="Self.FK_RVuser_RVprofile" FromRole="RVprofile" ToRole="RVuser" />
+        </EntityType>
+        <EntityType Name="RVsub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="sub1" Type="Boolean" />
+          <Property Name="sub2" Type="Boolean" />
+          <Property Name="sub3" Type="Boolean" />
+          <Property Name="sub4" Type="Boolean" />
+          <Property Name="sub5" Type="Boolean" />
+          <NavigationProperty Name="RVprofile" Relationship="Self.FK_RVprofile_RVsub" FromRole="RVsub" ToRole="RVprofile" />
+          <NavigationProperty Name="RVprofile1" Relationship="Self.FK_RVprofile_RVsub1" FromRole="RVsub" ToRole="RVprofile" />
+          <NavigationProperty Name="RVprofile2" Relationship="Self.FK_RVprofile_RVsub2" FromRole="RVsub" ToRole="RVprofile" />
+          <NavigationProperty Name="RVprofile3" Relationship="Self.FK_RVprofile_RVsub3" FromRole="RVsub" ToRole="RVprofile" />
+          <NavigationProperty Name="RVprofile4" Relationship="Self.FK_RVprofile_RVsub4" FromRole="RVsub" ToRole="RVprofile" />
+        </EntityType>
+        <EntityType Name="RVuser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="idProfile" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="RVprofile" Relationship="Self.FK_RVuser_RVprofile" FromRole="RVuser" ToRole="RVprofile" />
+        </EntityType>
+        <Association Name="FK_RVprofile_RVsub">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub1">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub2">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub3">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVprofile_RVsub4">
+          <End Role="RVsub" Type="Self.RVsub" Multiplicity="0..1" />
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVsub">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVprofile">
+              <PropertyRef Name="menu5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RVuser_RVprofile">
+          <End Role="RVprofile" Type="Self.RVprofile" Multiplicity="0..1" />
+          <End Role="RVuser" Type="Self.RVuser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RVprofile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RVuser">
+              <PropertyRef Name="idProfile" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RVprofile" EntityType="Self.RVprofile" />
+          <EntitySet Name="RVsub" EntityType="Self.RVsub" />
+          <EntitySet Name="RVuser" EntityType="Self.RVuser" />
+          <AssociationSet Name="FK_RVprofile_RVsub" Association="Self.FK_RVprofile_RVsub">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub1" Association="Self.FK_RVprofile_RVsub1">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub2" Association="Self.FK_RVprofile_RVsub2">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub3" Association="Self.FK_RVprofile_RVsub3">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVprofile_RVsub4" Association="Self.FK_RVprofile_RVsub4">
+            <End Role="RVsub" EntitySet="RVsub" />
+            <End Role="RVprofile" EntitySet="RVprofile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RVuser_RVprofile" Association="Self.FK_RVuser_RVprofile">
+            <End Role="RVprofile" EntitySet="RVprofile" />
+            <End Role="RVuser" EntitySet="RVuser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RVModelStoreContainer" CdmEntityContainer="RVEntities">
+          <EntitySetMapping Name="RVprofile">
+            <EntityTypeMapping TypeName="RVModel.RVprofile">
+              <MappingFragment StoreEntitySet="RVprofile">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="menu1" ColumnName="menu1" />
+                <ScalarProperty Name="menu2" ColumnName="menu2" />
+                <ScalarProperty Name="menu3" ColumnName="menu3" />
+                <ScalarProperty Name="menu4" ColumnName="menu4" />
+                <ScalarProperty Name="menu5" ColumnName="menu5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RVsub">
+            <EntityTypeMapping TypeName="RVModel.RVsub">
+              <MappingFragment StoreEntitySet="RVsub">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sub1" ColumnName="sub1" />
+                <ScalarProperty Name="sub2" ColumnName="sub2" />
+                <ScalarProperty Name="sub3" ColumnName="sub3" />
+                <ScalarProperty Name="sub4" ColumnName="sub4" />
+                <ScalarProperty Name="sub5" ColumnName="sub5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RVuser">
+            <EntityTypeMapping TypeName="RVModel.RVuser">
+              <MappingFragment StoreEntitySet="RVuser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="idProfile" ColumnName="idProfile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

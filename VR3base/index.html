@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Parallax Template - Materialize</title>
+    <link href="css/materialize.css" rel="stylesheet" />
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- JavaScrip-->
+    <script>
+     var t1 = 1;
+    function cambiar()
+        {
+        if (t1 == 4) { t1 = 1;}
+        if (t1 == 1) { document.getElementById('divXCambiar').innerHTML = "Soluciones para ayudar a perfeccionar su negocio"; }
+        if (t1 == 2) { document.getElementById('divXCambiar').innerHTML = "Soluciones para ayudarte a crecer"; }
+        if (t1 == 3) { document.getElementById('divXCambiar').innerHTML = "Soluciones para grandes negocios"; }
+        t1 = t1 + 1;
+    }
+    setInterval(cambiar, 60000);
+    </script>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">MERINO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" class="waves-effect waves-teal">MERSAN</a></li>
+        <li><a href="#" class="waves-effect waves-teal">SOLUCIONES</a></li>
+        <li><a href="#" class="waves-effect waves-teal">IGCAR</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+          <li><a href="#" class="waves-effect waves-teal">MERSAN</a></li>
+          <li><a href="#" class="waves-effect waves-teal">SOLUCIONES</a></li>
+          <li><a href="#" class="waves-effect waves-teal">IGCAR</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<!-- ............................... -->
+  <div id="index-banner" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2" style="margin:1.1rem 0rem 0;">BUSINESS MANAGEMENT SYSTEM</h1>
+        <div class="row center">
+            <h5 class="header col s12 light" style="color: #795548">
+                Ayuda a los colaboradores a detectar riesgos, evaluar situaciones y encontrar oportunidades de un vistazo en cualquier lugar y a cualquier hora
+            </h5> 
+         </div>
+        <br><br>
+      </div>
+    </div>
+    <div class="parallax"><img src="image/IMAGE2.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">  
+            <h2 class="center brown-text"><i class="material-icons">open_with</i></h2>
+            <h5 class="center"><!--Accesibilidad a la información--> Acceso a la informacion</h5>
+            <p class="light center">Los datos son la fuente principal de este concepto. Lo primero que deben garantizar este tipo de herramientas y técnicas será el acceso de los usuarios a los datos con independencia de la procedencia de estos.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Apoyo en la toma de decisiones</h5>
+
+            <p class="light center">Se busca ir más allá en la presentación de la información, de manera que los usuarios tengan acceso a herramientas de análisis que les permitan seleccionar y manipular sólo aquellos datos que les interesen.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Mejorar la experiencia del usuario</h5>
+
+            <p class="light center">Se busca mejorar los elementos relativos a la interacción del usuario con el dispositivo, con la finalidad de generar una perceptiva positiva y a la ves retroalimentar el sistema con los aporte de los usuarios finales.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 id="divXCambiar" class="header col s12 light"> Soluciones para grandes negocios</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="image/IMAGE3.png" alt="Unsplashed background img 3"></div>
+    </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">BUSINESS MANAGEMENT SYSTEM</h5>
+          <p class="grey-text text-lighten-4" style="line-height: 1.5;">Ayuda a los colaboradores a detectar riesgos, evaluar situaciones y encontrar oportunidades de un vistazo en cualquier lugar y a cualquier hora</p>
+
+        </div>
+        <div class="col l3 s12">
+          <!--<h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+          </ul>-->
+        </div>
+        <div class="col l3 s12">
+          <!--<h5 class="white-text">Conect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+          </ul>-->
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+
+        <div class="row center">
+            <div class="col s12 m4 l5"><p class="left">TECHNOLOGY DEPARTMENT</p></div>
+            <div class="col s12 m4 l2"><p>©2015</p></div>
+            <div class="col s12 m4 l5"><p class="right">v3.0.1</p></div>
+        </div>
+          
+      </div>
+    </div>
+  
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+  </body>
+</html>
